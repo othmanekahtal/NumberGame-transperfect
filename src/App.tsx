@@ -49,11 +49,14 @@ function App() {
             type="number"
             className="guess"
             value={inputValue}
+            disabled={isGuessed}
             onChange={(e) => {
               setInputValue(e.target.valueAsNumber);
             }}
           />
-          <button className="btn check">Check!</button>
+          <button disabled={isGuessed} className="btn check">
+            Check!
+          </button>
         </form>
         <section className="right">
           <p className="message">{message}</p>
